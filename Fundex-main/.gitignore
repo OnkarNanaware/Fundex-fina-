@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env.local
+.env.development
+.env.production
+.env.test
+.env
+.env.*
+server/.env
+
+# Build output
+dist/
+build/
+client/dist/
+server/dist/
+
+# Cache
+.cache/
+.vite/
+.next/
+*.cache
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploaded images (if any local)
+uploads/
