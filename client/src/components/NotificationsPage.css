@@ -1,0 +1,308 @@
+.notifications-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+.notifications-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.notifications-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.back-button:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.mark-all-read-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #4299e1;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mark-all-read-btn:hover {
+    background: #3182ce;
+}
+
+.notifications-filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.filter-btn.active {
+    background: #4299e1;
+    border-color: #4299e1;
+    color: white;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.notification-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.notification-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+}
+
+.notification-card.unread {
+    background: #ebf8ff;
+    border-color: #90cdf4;
+}
+
+.notification-card-content {
+    flex: 1;
+}
+
+.notification-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.notification-card-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0;
+}
+
+.unread-badge {
+    padding: 4px 12px;
+    background: #4299e1;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+.notification-card-message {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+}
+
+.notification-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+}
+
+.notification-time {
+    color: #718096;
+}
+
+.notification-type {
+    padding: 4px 10px;
+    background: #edf2f7;
+    color: #4a5568;
+    border-radius: 6px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.notification-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.action-btn.mark-read:hover {
+    background: #48bb78;
+    border-color: #48bb78;
+    color: white;
+}
+
+.action-btn.delete:hover {
+    background: #f56565;
+    border-color: #f56565;
+    color: white;
+}
+
+.loading-state,
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.loading-state .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #4299e1;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-state p,
+.empty-state p {
+    color: #718096;
+    font-size: 14px;
+    margin: 8px 0 0 0;
+}
+
+.empty-state svg {
+    color: #cbd5e0;
+    margin-bottom: 16px;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 8px 0;
+}
+
+/* Dark mode support */
+.dark-mode .notifications-page {
+    background: #1a202c;
+}
+
+.dark-mode .notifications-header {
+    border-bottom-color: #2d3748;
+}
+
+.dark-mode .notifications-header h1 {
+    color: #f7fafc;
+}
+
+.dark-mode .back-button,
+.dark-mode .filter-btn,
+.dark-mode .notification-card {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-mode .back-button:hover,
+.dark-mode .filter-btn:hover {
+    background: #374151;
+}
+
+.dark-mode .notification-card.unread {
+    background: #2c5282;
+    border-color: #4299e1;
+}
+
+.dark-mode .notification-card-header h3 {
+    color: #f7fafc;
+}
+
+.dark-mode .notification-card-message {
+    color: #cbd5e0;
+}
+
+.dark-mode .notification-type {
+    background: #374151;
+    color: #e2e8f0;
+}
+
+.dark-mode .action-btn {
+    background: #374151;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-mode .action-btn:hover {
+    background: #4a5568;
+}

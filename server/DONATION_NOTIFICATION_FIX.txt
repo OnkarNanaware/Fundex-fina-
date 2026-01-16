@@ -1,0 +1,45 @@
+// Replacement code for donation notifications - lines 293-325
+
+      // 2. Notify ONLY the admin who created the campaign
+      console.log('🔍 Finding campaign creator admin to notify...');
+      
+      if (campaignId && Campaign) {
+        const campaign = await Campaign.findById(campaignId);
+        if (campaign && campaign.createdBy) {
+          const campaignCreatorAdmin = await User.findOne({ 
+            _id: campaign.createdBy, 
+            role: 'admin' 
+          });
+          
+          if (campaignCreatorAdmin) {
+            console.log(`📤 Creating notification for campaign creator: ${campaignCreatorAdmin._id} (${campaignCreatorAdmin.email})`);
+            await NotificationService.createNotification({
+              recipientId: campaignCreatorAdmin._id,
+              recipientRole: 'admin',
+              type: 'new_donation',
+              title: '💰 New Donation Received!',
+              message: `${isAnonymous ? 'An anonymous donor' : donorName} donated ₹${amount.toLocaleString()} to \"${campaignTitle}\"`,
+              relatedEntity: {
+                entityType: 'donation',
+                entityId: donation._id
+              },
+              metadata: {
+                amount: amount,
+                donorName: isAnonymous ? 'Anonymous' : donorName,
+                campaignName: campaignTitle,
+                campaignId: campaignId,
+                donationId: donation._id,
+                isAnonymous: isAnonymous
+              },
+              priority: 'high'
+            });
+            console.log(`✅ Created notification for campaign creator admin only`);
+          } else {
+            console.log('⚠️ Campaign creator admin not found');
+          }
+        } else {
+          console.log('⚠️ Campaign not found or has no creator');
+        }
+      } else {
+        console.log('⚠️ No campaignId provided, skipping admin notification');
+      }
