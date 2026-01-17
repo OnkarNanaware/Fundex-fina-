@@ -54,23 +54,17 @@ export const calculateFraudScore = (expenseData) => {
         details.ocrIssue = 'Could not detect amount from receipt';
     }
 
-    // Factor 2: GST Validation (0-30 points) - Increased weight
+    // Factor 2: GST Validation (0-25 points) - Only penalize if NO GST found
     if (expenseData.gstValidation) {
         if (!expenseData.gstValidation.found) {
-            score += 25; // Increased from 20
+            score += 25;
             flags.push('NO_GST_NUMBER');
             details.gstIssue = 'No GST number found on receipt';
-        } else if (!expenseData.gstValidation.valid) {
-            score += 30; // Increased from 25
-            flags.push('INVALID_GST');
-            details.gstIssue = 'GST number is invalid or not registered';
-        } else if (!expenseData.gstValidation.apiVerified) {
-            score += 10; // Increased from 5
-            flags.push('GST_NOT_API_VERIFIED');
-            details.gstIssue = 'GST format valid but could not verify online';
         }
+        // Note: We don't penalize for invalid GST anymore - just finding a GST number is enough
+        // Invalid GST might be due to OCR errors or new/unregistered businesses
     } else {
-        score += 20; // Increased from 15
+        score += 20;
         flags.push('GST_NOT_CHECKED');
         details.gstIssue = 'GST validation was not performed';
     }

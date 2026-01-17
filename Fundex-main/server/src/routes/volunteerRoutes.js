@@ -9,6 +9,7 @@ import cloudinary from '../services/cloudinaryService.js';
 import { analyzeBill, extractAmountFromBill, extractGSTFromBill } from '../services/ocrService.js';
 import { validateAndExtractGST } from '../services/gstValidationService.js';
 import { calculateFraudScore, generateFraudReport } from '../services/fraudDetectionService.js';
+import { calculateReliabilityScore, generateReliabilityReport } from '../services/reliabilityScoreService.js';
 
 import User from '../models/User.js';
 
@@ -448,6 +449,27 @@ router.post('/expenses', protect, upload.fields([
         // Generate fraud report
         const fraudReport = generateFraudReport(fraudAnalysis);
         console.log('\n' + fraudReport);
+
+        // -------------------------------
+        // RELIABILITY SCORE CALCULATION (NEW!)
+        // -------------------------------
+        console.log('⭐ Calculating reliability score...');
+        const reliabilityAnalysis = calculateReliabilityScore({
+            claimedAmount: parseFloat(amountSpent),
+            detectedAmount: detectedAmount,
+            gstValidation: gstValidation,
+            ocrExtracted: extractedText,
+            remainingBalance: remainingBalance
+        });
+
+        console.log('📊 Reliability Analysis:');
+        console.log('   Score:', reliabilityAnalysis.score);
+        console.log('   Rating:', reliabilityAnalysis.rating);
+        console.log('   Recommendation:', reliabilityAnalysis.recommendation);
+
+        // Generate reliability report
+        const reliabilityReport = generateReliabilityReport(reliabilityAnalysis);
+        console.log('\n' + reliabilityReport);
 
         // -------------------------------
         // UPLOAD PROOF IMAGE TO CLOUDINARY

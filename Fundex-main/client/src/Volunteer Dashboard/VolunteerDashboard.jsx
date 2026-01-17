@@ -751,9 +751,9 @@ const VolunteerDashboard = () => {
                     <div className="fraud-analysis-section">
                       <div className="fraud-score-badge" style={{
                         backgroundColor:
-                          expense.fraudScore >= 80 ? '#dc2626' :  // CRITICAL - Red
-                            expense.fraudScore >= 60 ? '#ea580c' :  // HIGH - Orange
-                              expense.fraudScore >= 40 ? '#f59e0b' :  // MEDIUM - Yellow
+                          expense.fraudScore >= 90 ? '#dc2626' :  // CRITICAL - Red
+                            expense.fraudScore >= 80 ? '#ea580c' :  // HIGH - Orange
+                              expense.fraudScore >= 30 ? '#f59e0b' :  // MEDIUM - Yellow
                                 expense.fraudScore >= 20 ? '#3b82f6' :  // LOW - Blue
                                   '#10b981',                               // MINIMAL - Green
                         color: 'white',
@@ -780,26 +780,30 @@ const VolunteerDashboard = () => {
                         alignItems: 'center',
                         gap: '8px',
                         padding: '8px',
-                        backgroundColor: expense.gstValid ? '#ecfdf5' : '#fef2f2',
+                        // CHANGE: use 'valid' instead of 'gstValid'
+                        backgroundColor: expense.valid ? '#ecfdf5' : '#fef2f2',
                         borderRadius: '8px',
-                        border: `1px solid ${expense.gstValid ? '#10b981' : '#ef4444'}`
+                        border: `1px solid ${expense.valid ? '#10b981' : '#ef4444'}`
                       }}>
-                        {expense.gstValid ? (
+                        {/* CHANGE: use 'valid' */}
+                        {expense.valid ? (
                           <BadgeCheck size={16} style={{ color: '#10b981' }} />
                         ) : (
                           <Ban size={16} style={{ color: '#ef4444' }} />
                         )}
                         <div style={{ flex: 1 }}>
-                          <div style={{ fontSize: '12px', fontWeight: '600', color: expense.gstValid ? '#065f46' : '#991b1b' }}>
+                          <div style={{ fontSize: '12px', fontWeight: '600', color: expense.valid ? '#065f46' : '#991b1b' }}>
                             GST: {expense.gstNumber}
                           </div>
-                          {expense.gstBusinessName && (
+                          {/* CHANGE: use 'businessName' */}
+                          {expense.businessName && (
                             <div style={{ fontSize: '11px', color: '#6b7280', marginTop: '2px' }}>
-                              {expense.gstBusinessName}
+                              {expense.businessName}
                             </div>
                           )}
                         </div>
-                        {expense.gstApiVerified && (
+                        {/* CHANGE: use 'status === "Active"' */}
+                        {expense.status === "Active" && (
                           <div style={{ fontSize: '10px', color: '#10b981', fontWeight: '600' }}>
                             ✓ Verified
                           </div>

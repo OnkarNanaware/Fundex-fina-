@@ -28,6 +28,7 @@ import {
   BarChart3,
   MapPin,
   Upload,
+  Award,
   Download,
 } from "lucide-react";
 import "./AdminDashboard.css";
@@ -319,8 +320,8 @@ export default function AdminDashboard() {
         receiptsCount: (e.receiptImage ? 1 : 0) + (e.proofImage ? 1 : 0),
         receiptImage: e.receiptImage,
         proofImage: e.proofImage,
-        aiStatus: (e.fraudFlags && e.fraudFlags.length > 0) ? 'flagged' : 'verified',
-        fraudScore: e.fraudFlags && e.fraudFlags.length > 0 ? Math.min(e.fraudFlags.length * 20, 100) : 0,
+        aiStatus: (e.fraudScore > 30) ? 'flagged' : 'verified',
+        fraudScore: e.fraudScore || 0,  // Use actual fraud score from backend
         fraudFlags: e.fraudFlags || [],
         ocrExtracted: e.ocrExtracted || '',
         detectedAmount: e.detectedAmount || null,
@@ -1769,9 +1770,61 @@ export default function AdminDashboard() {
                   <h3 className="card-title">{expense.title}</h3>
                   <p className="card-subtitle">{expense.volunteer} • {expense.campaign}</p>
                 </div>
-                <div className={`ai-badge ${expense.aiStatus}`}>
-                  <ShieldCheck size={14} />
-                  <span>AI {expense.aiStatus}</span>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  <div className={`ai-badge ${expense.aiStatus}`}>
+                    <ShieldCheck size={14} />
+                    <span>AI {expense.aiStatus}</span>
+                  </div>
+                  <div
+                    className="ai-badge"
+                    style={{
+                      backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                      padding: '8px 12px',
+                      minWidth: '140px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '4px'
+                    }}
+                  >
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      color: 'var(--text-secondary)'
+                    }}>
+                      <span>Trust Score</span>
+                      <span style={{
+                        color: (100 - (expense.fraudScore || 0)) >= 80 ? '#4CAF50' :
+                          (100 - (expense.fraudScore || 0)) >= 60 ? '#2196F3' :
+                            (100 - (expense.fraudScore || 0)) >= 40 ? '#FF9800' :
+                              '#F44336',
+                        fontWeight: '700'
+                      }}>
+                        {100 - (expense.fraudScore || 0)}%
+                      </span>
+                    </div>
+                    <div style={{
+                      width: '100%',
+                      height: '6px',
+                      backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                      borderRadius: '3px',
+                      overflow: 'hidden'
+                    }}>
+                      <div style={{
+                        width: `${100 - (expense.fraudScore || 0)}%`,
+                        height: '100%',
+                        backgroundColor:
+                          (100 - (expense.fraudScore || 0)) >= 80 ? '#4CAF50' :
+                            (100 - (expense.fraudScore || 0)) >= 60 ? '#2196F3' :
+                              (100 - (expense.fraudScore || 0)) >= 40 ? '#FF9800' :
+                                '#F44336',
+                        borderRadius: '3px',
+                        transition: 'width 0.3s ease'
+                      }} />
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1785,9 +1838,9 @@ export default function AdminDashboard() {
                   <span className="detail-value">{expense.receiptsCount} files</span>
                 </div>
                 <div className="detail-row">
-                  <span className="detail-label">Fraud Score</span>
-                  <span className={`fraud-score ${expense.fraudScore > 30 ? 'high' : 'low'}`}>
-                    {expense.fraudScore}%
+                  <span className="detail-label">Trust Score</span>
+                  <span className={`fraud-score ${(100 - (expense.fraudScore || 0)) < 70 ? 'high' : 'low'}`}>
+                    {100 - (expense.fraudScore || 0)}/100
                   </span>
                 </div>
                 <div className="detail-row">
@@ -2118,14 +2171,14 @@ export default function AdminDashboard() {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Fraud Score</label>
+                  <label>Trust Score</label>
                   <input
                     type="text"
-                    value={`${selectedExpense.fraudScore}%`}
+                    value={`${100 - (selectedExpense.fraudScore || 0)}/100`}
                     readOnly
                     style={{
-                      backgroundColor: selectedExpense.fraudScore > 30 ? '#ffebee' : '#e8f5e9',
-                      color: selectedExpense.fraudScore > 30 ? '#c62828' : '#2e7d32',
+                      backgroundColor: (100 - (selectedExpense.fraudScore || 0)) < 70 ? '#ffebee' : '#e8f5e9',
+                      color: (100 - (selectedExpense.fraudScore || 0)) < 70 ? '#c62828' : '#2e7d32',
                       fontWeight: 'bold'
                     }}
                   />

@@ -433,12 +433,37 @@ export default function FindCampaigns() {
                   alt={campaign.title}
                 />
                 <div className="image-overlay">
-                  <button
-                    className={`bookmark-btn ${isBookmarked ? 'bookmarked' : ''}`}
-                    onClick={() => handleBookmark(campaign._id)}
-                  >
-                    <Bookmark size={18} fill={isBookmarked ? "currentColor" : "none"} />
-                  </button>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <button
+                      className={`bookmark-btn ${isBookmarked ? 'bookmarked' : ''}`}
+                      onClick={() => handleBookmark(campaign._id)}
+                    >
+                      <Bookmark size={18} fill={isBookmarked ? "currentColor" : "none"} />
+                    </button>
+                    {campaign.ngoTrustScore && (
+                      <div
+                        style={{
+                          backgroundColor:
+                            campaign.ngoTrustScore >= 80 ? 'rgba(76, 175, 80, 0.9)' :
+                              campaign.ngoTrustScore >= 60 ? 'rgba(33, 150, 243, 0.9)' :
+                                campaign.ngoTrustScore >= 40 ? 'rgba(255, 152, 0, 0.9)' :
+                                  'rgba(244, 67, 54, 0.9)',
+                          color: 'white',
+                          padding: '4px 12px',
+                          borderRadius: '12px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          whiteSpace: 'nowrap'
+                        }}
+                      >
+                        <Award size={12} />
+                        Trust: {campaign.ngoTrustScore}/100
+                      </div>
+                    )}
+                  </div>
                   {campaign.urgency === "high" && (
                     <div className="urgency-tag">
                       <Zap size={14} />

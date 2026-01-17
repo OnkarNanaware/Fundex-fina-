@@ -153,16 +153,16 @@ export default function AdminExpenses() {
               <td
                 style={{
                   color:
-                    (e.fraudScore || 0) >= 80 ? "#dc2626" :  // CRITICAL - Red
-                      (e.fraudScore || 0) >= 60 ? "#ea580c" :  // HIGH - Orange
-                        (e.fraudScore || 0) >= 40 ? "#f59e0b" :  // MEDIUM - Yellow
-                          (e.fraudScore || 0) >= 20 ? "#3b82f6" :  // LOW - Blue
-                            "#10b981",                                // MINIMAL - Green
+                    (100 - (e.fraudScore || 0)) >= 80 ? "#10b981" :  // HIGH TRUST - Green
+                      (100 - (e.fraudScore || 0)) >= 60 ? "#3b82f6" :  // GOOD TRUST - Blue
+                        (100 - (e.fraudScore || 0)) >= 40 ? "#f59e0b" :  // MODERATE TRUST - Yellow
+                          (100 - (e.fraudScore || 0)) >= 20 ? "#ea580c" :  // LOW TRUST - Orange
+                            "#dc2626",                                        // VERY LOW TRUST - Red
                   fontWeight: "bold",
                   fontSize: "16px"
                 }}
               >
-                {e.fraudScore || 0}/100
+                {100 - (e.fraudScore || 0)}/100
               </td>
               <td
                 style={{

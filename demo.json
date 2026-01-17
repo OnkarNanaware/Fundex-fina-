@@ -1,0 +1,332 @@
+[
+    {
+        "gstNumber": "24BNKPCO308R1ZH",
+        "businessName": "Fundex Foundation",
+        "state": "Maharashtra",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "24BNKPC9308R1ZH",
+        "businessName": "Helping Hands NGO",
+        "state": "Karnataka",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "07ABCDE1234F1Z5",
+        "businessName": "Udaan Trust",
+        "state": "Delhi",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "09ABCDE1234F1Z5",
+        "businessName": "Nayi Disha Foundation",
+        "state": "Uttar Pradesh",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "24ABCDE1234F1Z5",
+        "businessName": "Sahara Welfare Society",
+        "state": "Gujarat",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "33ABCDE1234F1Z5",
+        "businessName": "Green Earth Initiative",
+        "state": "Tamil Nadu",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "32ABCDE1234F1Z5",
+        "businessName": "Care Kerala Trust",
+        "state": "Kerala",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "19ABCDE1234F1Z5",
+        "businessName": "Hope Bengal Foundation",
+        "state": "West Bengal",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "23ABCDE1234F1Z5",
+        "businessName": "Jeevan Jyoti Samiti",
+        "state": "Madhya Pradesh",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "24AMLPVS538M1ZA",
+        "businessName": "Haryana Youth Trust",
+        "state": "Haryana",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "03ABCDE1234F1Z5",
+        "businessName": "Punjab Sewa Society",
+        "state": "Punjab",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "08ABCDE1234F1Z5",
+        "businessName": "Rajasthan Gramin Vikas",
+        "state": "Rajasthan",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "21ABCDE1234F1Z5",
+        "businessName": "Odisha Relief Trust",
+        "state": "Odisha",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "20ABCDE1234F1Z5",
+        "businessName": "Jharkhand Arogya Mission",
+        "state": "Jharkhand",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "10ABCDE1234F1Z5",
+        "businessName": "Bihar Education Trust",
+        "state": "Bihar",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "02ABCDE1234F1Z5",
+        "businessName": "Himachal Care Foundation",
+        "state": "Himachal Pradesh",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "05ABCDE1234F1Z5",
+        "businessName": "Uttarakhand Seva Samiti",
+        "state": "Uttarakhand",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "18ABCDE1234F1Z5",
+        "businessName": "Assam Flood Relief",
+        "state": "Assam",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "17ABCDE1234F1Z5",
+        "businessName": "Meghalaya Health Trust",
+        "state": "Meghalaya",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "16ABCDE1234F1Z5",
+        "businessName": "Tripura Child Welfare",
+        "state": "Tripura",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "15ABCDE1234F1Z5",
+        "businessName": "Mizoram Development Society",
+        "state": "Mizoram",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "14ABCDE1234F1Z5",
+        "businessName": "Manipur Peace Foundation",
+        "state": "Manipur",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "13ABCDE1234F1Z5",
+        "businessName": "Nagaland Tribal Support",
+        "state": "Nagaland",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "12ABCDE1234F1Z5",
+        "businessName": "Arunachal Welfare Group",
+        "state": "Arunachal Pradesh",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "11ABCDE1234F1Z5",
+        "businessName": "Sikkim Green Society",
+        "state": "Sikkim",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "30ABCDE1234F1Z5",
+        "businessName": "Goa Coastal Care",
+        "state": "Goa",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "34ABCDE1234F1Z5",
+        "businessName": "Puducherry Social Trust",
+        "state": "Puducherry",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "31ABCDE1234F1Z5",
+        "businessName": "Lakshadweep Island Aid",
+        "state": "Lakshadweep",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "04ABCDE1234F1Z5",
+        "businessName": "Chandigarh Community Trust",
+        "state": "Chandigarh",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "gstNumber": "22ABCDE1234F1Z5",
+        "businessName": "Chhattisgarh Seva Foundation",
+        "state": "Chhattisgarh",
+        "status": "Active",
+        "valid": true
+    },
+    {
+        "createdAt": "2026-01-16T02:06:39.737Z",
+        "name": "Alex Grady",
+        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/37.jpg",
+        "id": "1"
+    },
+    {
+        "createdAt": "2026-01-16T06:19:25.518Z",
+        "name": "Miss Hilda Mosciski",
+        "avatar": "https://avatars.githubusercontent.com/u/34540206",
+        "id": "2"
+    },
+    {
+        "createdAt": "2026-01-16T20:20:42.436Z",
+        "name": "Brandy Schmidt",
+        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/47.jpg",
+        "id": "3"
+    },
+    {
+        "createdAt": "2026-01-15T22:21:14.413Z",
+        "name": "Monique Bradtke",
+        "avatar": "https://avatars.githubusercontent.com/u/41999958",
+        "id": "4"
+    },
+    {
+        "createdAt": "2026-01-16T14:48:31.209Z",
+        "name": "Kristie Kunze",
+        "avatar": "https://avatars.githubusercontent.com/u/80819273",
+        "id": "5"
+    },
+    {
+        "createdAt": "2026-01-15T22:15:59.703Z",
+        "name": "Marjorie Hayes",
+        "avatar": "https://avatars.githubusercontent.com/u/56362564",
+        "id": "6"
+    },
+    {
+        "createdAt": "2026-01-16T07:51:47.055Z",
+        "name": "Allen Nitzsche-Spinka",
+        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/74.jpg",
+        "id": "7"
+    },
+    {
+        "createdAt": "2026-01-16T19:37:05.880Z",
+        "name": "Genevieve O'Connell",
+        "avatar": "https://avatars.githubusercontent.com/u/31771486",
+        "id": "8"
+    },
+    {
+        "createdAt": "2026-01-16T16:08:48.840Z",
+        "name": "Dr. Neil Bauch IV",
+        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/97.jpg",
+        "id": "9"
+    },
+    {
+        "createdAt": "2026-01-16T07:51:20.143Z",
+        "name": "Janet Kozey",
+        "avatar": "https://avatars.githubusercontent.com/u/36652444",
+        "id": "10"
+    },
+    {
+        "createdAt": "2026-01-16T01:03:37.462Z",
+        "name": "Nicole Hane",
+        "avatar": "https://avatars.githubusercontent.com/u/31532958",
+        "id": "11"
+    },
+    {
+        "createdAt": "2026-01-16T19:06:55.614Z",
+        "name": "Jeremiah Mayer",
+        "avatar": "https://avatars.githubusercontent.com/u/89273616",
+        "id": "12"
+    },
+    {
+        "createdAt": "2026-01-16T11:52:05.455Z",
+        "name": "Dr. Josephine Stanton",
+        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/46.jpg",
+        "id": "13"
+    },
+    {
+        "createdAt": "2026-01-16T00:10:49.098Z",
+        "name": "Mr. Malcolm Bauch",
+        "avatar": "https://avatars.githubusercontent.com/u/9161445",
+        "id": "14"
+    },
+    {
+        "createdAt": "2026-01-15T20:47:43.853Z",
+        "name": "Sergio Cronin",
+        "avatar": "https://avatars.githubusercontent.com/u/4292126",
+        "id": "15"
+    },
+    {
+        "createdAt": "2026-01-16T09:54:03.998Z",
+        "name": "Ms. Ramona Kiehn",
+        "avatar": "https://avatars.githubusercontent.com/u/86324851",
+        "id": "16"
+    },
+    {
+        "createdAt": "2026-01-15T22:35:07.724Z",
+        "name": "Herman Hahn",
+        "avatar": "https://avatars.githubusercontent.com/u/23834756",
+        "id": "17"
+    },
+    {
+        "createdAt": "2026-01-16T12:21:01.985Z",
+        "name": "Kristopher Sporer",
+        "avatar": "https://avatars.githubusercontent.com/u/2871938",
+        "id": "18"
+    },
+    {
+        "createdAt": "2026-01-16T19:26:32.541Z",
+        "name": "Lori Wolff-Beatty",
+        "avatar": "https://avatars.githubusercontent.com/u/38653269",
+        "id": "19"
+    },
+    {
+        "createdAt": "2026-01-16T15:56:47.685Z",
+        "name": "Irene Parker",
+        "avatar": "https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/63.jpg",
+        "id": "20"
+    }
+]
